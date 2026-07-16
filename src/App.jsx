@@ -42,7 +42,8 @@ function App() {
         <color attach="background" args={[t.background]} />
         <fog attach="fog" args={[t.fog.color, t.fog.near, t.fog.far]} />
         <Suspense fallback={null}>
-          <ScrollControls pages={projects.length + 1} damping={0.3}>
+          {/* +2: the opening "About me" and closing "Skills" sections */}
+          <ScrollControls pages={projects.length + 2} damping={0.3}>
             <Experience theme={t} />
             {/* Project descriptions that scroll in sync with the journey */}
             <Scroll html style={{ width: "100%" }}>
@@ -60,6 +61,12 @@ function App() {
 
       <nav className="site-nav">
         <button className="nav-btn" onClick={() => scrollToFraction(0)}>
+          About
+        </button>
+        <button
+          className="nav-btn"
+          onClick={() => scrollToFraction(1 / (projects.length + 2))}
+        >
           Work
         </button>
         <button className="nav-btn" onClick={() => scrollToFraction(1)}>

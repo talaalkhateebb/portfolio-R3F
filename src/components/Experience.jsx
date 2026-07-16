@@ -46,11 +46,12 @@ export const Experience = ({ theme }) => {
   // A world for each project, sitting beside the flight path at the scroll
   // position where that project's description comes into view.
   const projectWorlds = useMemo(() => {
-    // +1 section for the closing "What I know" panel; keeps the clouds in
-    // sync with the scrolled description sections.
-    const totalSections = projects.length + 1;
+    // +2 sections: the opening "About me" panel and the closing "What I
+    // know" panel; keeps the clouds in sync with the scrolled sections.
+    const totalSections = projects.length + 2;
     return projects.map((project, i) => {
-      const offset = (i + 0.5) / totalSections;
+      // +1 skips past the "About me" section at the start of the journey.
+      const offset = (i + 1.5) / totalSections;
       const camPoint = curve.getPoint(offset);
       const side = i % 2 === 0 ? -1 : 1;
       const position = [

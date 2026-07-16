@@ -275,6 +275,36 @@ body {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
+/* ---------- Opening "About me" section ---------- */
+.about-section {
+  justify-content: center;
+}
+.about-card {
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+}
+.about-card .project-tags {
+  justify-content: center;
+}
+/* Inline 3D waving character, sized like an emoji next to the title */
+.about-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+}
+.waving-character {
+  display: inline-block;
+  width: 2.8em;
+  height: 2.8em;
+  flex: none;
+}
+.waving-character canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 /* ---------- Skills / "What I know" section ---------- */
 .skills-section {
   justify-content: center;

@@ -1,11 +1,41 @@
 import { projects } from "../projects";
 import { skillGroups } from "../skills";
+import { WavingCharacter } from "./WavingCharacter";
 
 // One full-screen section per project. Because it lives inside drei's
 // <Scroll html>, these scroll in sync with the camera flying past each world.
 export const Interface = () => {
   return (
     <div className="interface">
+      {/* Opening "About me" section — the journey starts with who I am */}
+      <section className="project-section about-section">
+        <article className="project-card about-card">
+          <span className="project-index">About me</span>
+          <h2 className="project-title about-title">
+            Hi, I'm Tala <WavingCharacter />
+          </h2>
+          <p className="project-desc">
+            Hi, I'm Tala Alkhateeb, a software engineer and web developer who
+            loves turning ideas into things people can actually use. I work
+            across every stage of building products: from designing the
+            interface in Figma to shipping the final website or app.
+          </p>
+          <p className="project-desc">
+            I care about details, performance, and clean design. Whether it's
+            a client website, a UI concept, or a game, I aim to make it feel
+            polished and purposeful.
+          </p>
+          <a
+            className="project-open"
+            href="/cv_tala_alkhateeb-1.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View my CV ↗
+          </a>
+        </article>
+      </section>
+
       {projects.map((project, i) => {
         // Put the card opposite the planet (planets alternate left/right).
         const cardSide = i % 2 === 0 ? "right" : "left";
